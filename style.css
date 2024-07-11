@@ -161,6 +161,16 @@ footer {
   cursor: pointer;
 }
 
+
+.modeContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  
+}
+
 @media screen and (max-width: 768px) {
   .container {
     width: 90%;
