@@ -9,6 +9,7 @@ const btn7 = document.querySelector(".btn7");
 const btn8 = document.querySelector(".btn8");
 const btn9 = document.querySelector(".btn9");
 const allbtns = document.querySelectorAll(".btnSquare");
+console.log(allbtns);
 // footer dynamic year element
 const yearText = document.querySelector(".yearText");
 // winner message dom element

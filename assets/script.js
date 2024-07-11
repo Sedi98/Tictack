@@ -171,10 +171,10 @@ function checkWinner() {
     console.log("8ci check");
   } else if (b1 && b2 && b3 && b4 && b5 && b6 && b7 && b8 && b9) {
     ScoreCalc('draw');
-  } else if (b2 === b4 && b4 === b6 && b2 === b6 && b2 && b4 && b6) {
-    ScoreCalc(b2);
-    console.log("9ci check");
-    console.log("sert odenildi");
+//   } else if (b2 === b4 && b4 === b6 && b2 === b6 && b2 && b4 && b6) {
+//     ScoreCalc(b2);
+//     console.log("9ci check");
+//     console.log("sert odenildi");
   }
 }
 
