@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #a8c0ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #3f2b96,
+    #a8c0ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #3f2b96,
+    #a8c0ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 50%;
+  height: 85%;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.btnSquare {
+  width: calc(100% / 3);
+  height: calc(100% / 3);
+  border: 2px solid purple;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  cursor: pointer;
+  color: #3f2b96;
+}
+
+.btnSquare:nth-child(1) {
+  border-top: none;
+  border-left: none;
+  border-top-left-radius: 10px;
+}
+
+.btnSquare:nth-child(2) {
+  border-top: none;
+}
+
+.btnSquare:nth-child(3) {
+  border-top: none;
+  border-right: none;
+  border-top-right-radius: 10px;
+}
+
+.btnSquare:nth-child(4) {
+  border-left: none;
+}
+
+.btnSquare:nth-child(6) {
+  border-right: none;
+}
+
+.btnSquare:nth-child(7) {
+  border-bottom: none;
+  border-left: none;
+  border-bottom-left-radius: 10px;
+}
+
+.btnSquare:nth-child(8) {
+  border-bottom: none;
+}
+
+.btnSquare:nth-child(9) {
+  border-bottom: none;
+  border-right: none;
+  border-bottom-right-radius: 10px;
+}
+
+.texts {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scoreContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+.resetBtn {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  background-color: #3f2b96;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.xScore {
+  color: #3f2b96;
+}
+
+.oScore {
+  color: #a8c0ff;
+}
+
+.winnerMessageText {
+  color: black;
+  font-size: 30px;
+  position: absolute;
+  transform: scale(3);
+  display: none;
+  transition: 0.5s ease-in-out;
+  background-color: #a8c0ff;
+  border-radius: 10px;
+  padding: 10px;
+  opacity: 0.7;
+}
+
+footer {
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+}

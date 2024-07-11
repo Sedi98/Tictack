@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>TicTacToe</title>
+  </head>
+  <body>
+    <h1 class="winnerMessageText">Win</h1>
+    <div class="container">
+      <div class="texts">
+        <h1>TicTacToe</h1>
+        <div class="scoreContainer">
+          <h2 class="xScore">X:0</h2>
+          <h2 class="oScore">O:0</h2>
+        </div>
+      </div>
+
+      <div class="game">
+        <!-- 1,2,3 -->
+        <button class="btnSquare btn1"></button>
+        <button class="btnSquare btn2"></button>
+        <button class="btnSquare btn3"></button>
+        <!-- 4,5,6 -->
+        <button class="btnSquare btn4"></button>
+        <button class="btnSquare btn5"></button>
+        <button class="btnSquare btn6"></button>
+        <!-- 7,8,9 -->
+        <button class="btnSquare btn7"></button>
+        <button class="btnSquare btn8"></button>
+        <button class="btnSquare btn9"></button>
+      </div>
+
+      <button class="resetBtn" onclick="resetGame()">Reset</button>
+      <footer class="footer">
+        <p> &copy; Copyright  2024<span class="yearText"></span> .Sadi Mammadov. All Rights Reserved</p>
+      </footer>
+    </div>
+
+    <script src="./assets/variables.js"></script>
+    <script src="./assets/script.js"></script>
+  </body>
+</html>
