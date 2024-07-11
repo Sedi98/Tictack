@@ -9,6 +9,7 @@ const btn7 = document.querySelector(".btn7");
 const btn8 = document.querySelector(".btn8");
 const btn9 = document.querySelector(".btn9");
 const allbtns = document.querySelectorAll(".btnSquare");
+let modeBtn = document.querySelector(".modeBtn");
 console.log(allbtns);
 // footer dynamic year element
 const yearText = document.querySelector(".yearText");
@@ -26,6 +27,10 @@ let playerOScore = 0;
 
 // dynamic year text
 yearText.innerHTML = new Date().getFullYear()>'2024'? `-${new Date().getFullYear()}`: '';
+
+
+
+let gameMode = "normal";
 
 
 

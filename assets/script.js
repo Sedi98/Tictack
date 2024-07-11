@@ -10,7 +10,9 @@ btn1.addEventListener("click", function () {
     b1 = "O";
     playerState = "X";
   }
-
+  if (gameMode === "computer") {
+    AiLogic();
+  }
   checkWinner();
 });
 
@@ -25,6 +27,10 @@ btn2.addEventListener("click", function () {
     btn2.style.color = "red";
     b2 = "O";
     playerState = "X";
+  }
+
+  if (gameMode === "computer") {
+    AiLogic();
   }
 
   checkWinner();
@@ -43,6 +49,9 @@ btn3.addEventListener("click", function () {
     playerState = "X";
   }
 
+  if (gameMode === "computer") {
+    AiLogic();
+  }
   checkWinner();
 });
 
@@ -58,6 +67,10 @@ btn4.addEventListener("click", function () {
     btn4.style.color = "red";
     b4 = "O";
     playerState = "X";
+  }
+
+  if (gameMode === "computer") {
+    AiLogic();
   }
 
   checkWinner();
@@ -76,6 +89,10 @@ btn5.addEventListener("click", function () {
     playerState = "X";
   }
 
+  if (gameMode === "computer") {
+    AiLogic();
+  }
+
   checkWinner();
 });
 
@@ -91,7 +108,9 @@ btn6.addEventListener("click", function () {
     b6 = "O";
     playerState = "X";
   }
-
+  if (gameMode === "computer") {
+    AiLogic();
+  }
   checkWinner();
 });
 
@@ -106,6 +125,10 @@ btn7.addEventListener("click", function () {
     btn7.style.color = "red";
     b7 = "O";
     playerState = "X";
+  }
+
+  if (gameMode === "computer") {
+    AiLogic();
   }
 
   checkWinner();
@@ -124,6 +147,10 @@ btn8.addEventListener("click", function () {
     playerState = "X";
   }
 
+  if (gameMode === "computer") {
+    AiLogic();
+  }
+
   checkWinner();
 });
 
@@ -139,6 +166,10 @@ btn9.addEventListener("click", function () {
     b9 = "O";
 
     playerState = "X";
+  }
+
+  if (gameMode === "computer") {
+    AiLogic();
   }
 
   checkWinner();
@@ -170,11 +201,11 @@ function checkWinner() {
     ScoreCalc(b3);
     console.log("8ci check");
   } else if (b1 && b2 && b3 && b4 && b5 && b6 && b7 && b8 && b9) {
-    ScoreCalc('draw');
-//   } else if (b2 === b4 && b4 === b6 && b2 === b6 && b2 && b4 && b6) {
-//     ScoreCalc(b2);
-//     console.log("9ci check");
-//     console.log("sert odenildi");
+    ScoreCalc("draw");
+    //   } else if (b2 === b4 && b4 === b6 && b2 === b6 && b2 && b4 && b6) {
+    //     ScoreCalc(b2);
+    //     console.log("9ci check");
+    //     console.log("sert odenildi");
   }
 }
 
@@ -183,7 +214,6 @@ function ScoreCalc(player) {
   if (player === "X") {
     playerXScore++;
     xScoreText.innerHTML = `X:${playerXScore}`;
-    
   } else if (player === "O") {
     playerOScore++;
     oScoreText.innerHTML = `O:${playerOScore}`;
@@ -197,7 +227,6 @@ function ScoreCalc(player) {
 function stopGame() {
   for (let i = 0; i < allbtns.length; i++) {
     allbtns[i].disabled = true;
-
   }
 }
 
@@ -214,20 +243,73 @@ function resetGame() {
   hideWinnerMessage();
 }
 
-
-function ShowWinnerMessage(player) { 
-    winnerMessageText.style.display = "block";
-    winnerMessageText.innerHTML = `Winner is ${player}`
-    winnerMessageText.style.color = player === "X" ? "blue" : "red";
-    setTimeout(() => {
-        winnerMessageText.style.transform = "scale(2)";
-    },200)
-    
-}   
-
+function ShowWinnerMessage(player) {
+  winnerMessageText.style.display = "block";
+  winnerMessageText.innerHTML = `Winner is ${player}`;
+  winnerMessageText.style.color = player === "X" ? "blue" : "red";
+  setTimeout(() => {
+    winnerMessageText.style.transform = "scale(2)";
+  }, 200);
+}
 
 function hideWinnerMessage() {
-    winnerMessageText.style.display = "none";
-    winnerMessageText.style.transform = "scale(3)";
+  winnerMessageText.style.display = "none";
+  winnerMessageText.style.transform = "scale(3)";
 }
-              
+
+function changeMode() {
+  modeBtn.innerHTML =
+    modeBtn.innerHTML === "2 player" ? "Vs Computer" : "2 player";
+  if (gameMode === "computer") {
+    gameMode = "normal";
+    resetGame();
+    alert("Game mode changed to 2 player");
+  } else if (gameMode === "normal") {
+    gameMode = "computer";
+    resetGame();
+    alert("Game mode changed to vs AI");
+  }
+}
+
+function AiLogic() {
+  let freeCounts = 0;
+  for (let i = 0; i < allbtns.length; i++) {
+    if (allbtns[i].innerHTML === "") {
+      freeCounts++;
+    }
+  }
+
+  if (freeCounts === 0) {
+    ScoreCalc("draw");
+    return false;
+  }
+  let random = Math.floor(Math.random() * 9) + 1;
+  if (allbtns[random - 1].innerHTML === "") {
+    allbtns[random - 1].innerHTML = "O";
+    allbtns[random - 1].style.color = "red";
+    allbtns[random - 1].disabled = true;
+
+    playerState = "X";
+    if (random == 1) {
+      b1 = "O";
+    } else if (random == 2) {
+      b2 = "O";
+    } else if (random == 3) {
+      b3 = "O";
+    } else if (random == 4) {
+      b4 = "O";
+    } else if (random == 5) {
+      b5 = "O";
+    } else if (random == 6) {
+      b6 = "O";
+    } else if (random == 7) {
+      b7 = "O";
+    } else if (random == 8) {
+      b8 = "O";
+    } else if (random == 9) {
+      b9 = "O";
+    }
+  } else {
+    AiLogic();
+  }
+}
